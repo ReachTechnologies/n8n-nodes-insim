@@ -146,9 +146,9 @@ The biggest difference isn't just the open rate. It's that customers **reply** t
 
 ## Variations
 
-- [Event marketer: Post-trade-show follow-up](./event-post-tradeshow.md) *(coming soon)*
-- [Agency marketer: Automated client reporting](./agency-client-reporting.md) *(coming soon)*
-- [Franchise marketer: Multi-location campaigns](./franchise-multi-location.md) *(coming soon)*
+- [Event marketer: Post-trade-show follow-up](./event-post-tradeshow.md)
+- [Agency marketer: Automated client reporting](./agency-client-reporting.md)
+- [Franchise marketer: Multi-location campaigns](./franchise-multi-location.md)
 
 ## Related study cases
 

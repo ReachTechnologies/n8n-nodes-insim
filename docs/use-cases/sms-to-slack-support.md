@@ -164,9 +164,9 @@ The game changer: customers still text the same number they've always used. They
 
 ## Variations
 
-- [Delivery support: Package tracking via SMS](./delivery-tracking-sms.md) *(coming soon)*
+- [Delivery support: Package tracking via SMS](./delivery-tracking-sms.md)
 - [Field maintenance: Appointment booking via SMS](./maintenance-appointment-sms.md) *(coming soon)*
-- [After-sales: Satisfaction survey via SMS](./satisfaction-survey-sms.md) *(coming soon)*
+- [After-sales: Satisfaction survey via SMS](./satisfaction-survey-sms.md)
 
 ## Related study cases
 
