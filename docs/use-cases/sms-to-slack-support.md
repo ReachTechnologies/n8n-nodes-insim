@@ -37,7 +37,7 @@ Amina tried shared email, but customers don't email — they text. She tried a s
 
 **Inbound flow (SMS → Slack):**
 ```
-[Webhook: SMS received] → [inSIM: Find Contact] → [inSIM: Get Conversation] → [Slack: Post Message]
+[Webhook: SMS received] → [inSIM: Find by Phone] → [inSIM: Get Conversation] → [Slack: Post Message]
 ```
 
 **Outbound flow (Slack → SMS):**
@@ -71,10 +71,10 @@ When an SMS webhook arrives, the payload includes the sender's phone number.
 
 Add an **inSIM** node:
 - Resource: **Contact**
-- Operation: **Search**
-- Query: `{{ $json.phone_number }}`
+- Operation: **Find by Phone**
+- Phone Number: `{{ $json.phone_number }}`
 
-This returns the contact's name, tags, and ID. If the contact doesn't exist, you'll get an empty result — you can create them automatically.
+This returns the contact's name, tags, and ID based on their phone number. If the contact doesn't exist, you'll get an empty result — you can handle that with an IF node.
 
 ### Step 3: Get conversation context
 

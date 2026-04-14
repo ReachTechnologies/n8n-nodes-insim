@@ -39,7 +39,7 @@ Lea wants SMS recovery from the company's real phone number. The same number pri
 ```
 [Shopify Webhook] → [Wait 1h] → [Shopify: Check Order] → [IF: Still unpaid?]
                                                               ↓ Yes
-                                    [inSIM: Search Contact] → [inSIM: Send SMS] → [inSIM: Manage Tags]
+                                    [inSIM: Find by Phone] → [inSIM: Send SMS] → [inSIM: Manage Tags]
 ```
 
 ### Step 1: Shopify webhook trigger
@@ -81,10 +81,10 @@ Add an **IF** node:
 
 Add an **inSIM** node:
 - Resource: **Contact**
-- Operation: **Search**
-- Query: `{{ $json.customer.phone }}`
+- Operation: **Find by Phone**
+- Phone Number: `{{ $json.customer.phone }}`
 
-This finds the customer in your inSIM contacts. If they exist, you get their full profile. If not, you can create them.
+This finds the customer in your inSIM contacts by their phone number. If they exist, you get their full profile and ID for tagging.
 
 ### Step 6: Send recovery SMS
 
