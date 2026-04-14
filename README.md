@@ -155,9 +155,17 @@ Webhook trigger on inSIM SMS received > Format message > Post to Slack channel
 
 ## Study cases
 
-- [E-commerce: Abandoned cart SMS recovery](./docs/use-cases/) *(coming soon)*
-- [Real estate: Open house follow-up](./docs/use-cases/) *(coming soon)*
-- [Support: SMS to Slack routing](./docs/use-cases/) *(coming soon)*
+| Sector | Use Case | Description |
+|--------|----------|-------------|
+| E-commerce | [Abandoned cart SMS recovery](./docs/use-cases/shopify-abandoned-cart.md) | Shopify webhook → wait → verify → personalized SMS with discount |
+| Support | [SMS-to-Slack routing](./docs/use-cases/sms-to-slack-support.md) | Route incoming SMS to Slack, reply from Slack via inSIM |
+| Events | [Post-trade-show follow-up](./docs/use-cases/event-post-tradeshow.md) | 3-step SMS drip sequence after collecting business cards |
+| Agency | [Automated client reporting](./docs/use-cases/agency-client-reporting.md) | Weekly SMS performance summaries from Google Sheets data |
+| Franchise | [Multi-location campaigns](./docs/use-cases/franchise-multi-location.md) | Location-specific promotions to customers tagged by store |
+| Logistics | [Delivery tracking SMS](./docs/use-cases/delivery-tracking-sms.md) | Real-time SMS at each fulfillment stage |
+| Services | [Satisfaction survey SMS](./docs/use-cases/satisfaction-survey-sms.md) | Post-service 1-question survey, results to Google Sheets |
+
+> See also: [insim-cli study cases](https://github.com/ReachTechnologies/insim-cli#study-cases) (terminal scripts) and [insim-mcp study cases](https://github.com/ReachTechnologies/insim-mcp#study-cases) (AI agents).
 
 ## Contributing
 
