@@ -1,0 +1,43 @@
+{
+	"name": "n8n-nodes-insim",
+	"version": "1.0.0",
+	"description": "n8n community node for inSIM — SMS, contacts, campaigns, calls, CRM",
+	"license": "Apache-2.0",
+	"homepage": "https://www.insim.app",
+	"keywords": [
+		"n8n-community-node-package"
+	],
+	"author": {
+		"name": "Reach Technologies SAS",
+		"email": "contact@reachtechnologies.fr"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ReachTechnologies/n8n-nodes-insim.git"
+	},
+	"scripts": {
+		"build": "tsc && cp nodes/Insim/Insim.node.json dist/nodes/Insim/Insim.node.json && cp nodes/Insim/insim.svg dist/nodes/Insim/insim.svg",
+		"dev": "tsc --watch",
+		"lint": "eslint nodes credentials --ext .ts",
+		"prepublishOnly": "npm run build"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/InsimApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Insim/Insim.node.js"
+		]
+	},
+	"devDependencies": {
+		"typescript": "~5.7.0",
+		"@types/node": "^22.0.0"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
