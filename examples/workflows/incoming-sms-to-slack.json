@@ -1,0 +1,48 @@
+{
+  "name": "Incoming SMS to Slack",
+  "nodes": [
+    {
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "position": [250, 300],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "insim-sms-received"
+      }
+    },
+    {
+      "name": "Find Contact",
+      "type": "n8n-nodes-insim.insim",
+      "position": [450, 300],
+      "parameters": {
+        "resource": "contact",
+        "operation": "findByPhone",
+        "phoneNumber": "={{ $json.phone_number }}"
+      },
+      "credentials": {
+        "insimApi": "inSIM API"
+      }
+    },
+    {
+      "name": "Post to Slack",
+      "type": "n8n-nodes-base.slack",
+      "position": [650, 300],
+      "parameters": {
+        "channel": "#support",
+        "text": "📱 SMS from {{ $json.firstname }} {{ $json.lastname }} ({{ $json.phone_number }}):\n> {{ $node['Webhook'].json.message }}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [{ "node": "Find Contact", "type": "main", "index": 0 }]
+      ]
+    },
+    "Find Contact": {
+      "main": [
+        [{ "node": "Post to Slack", "type": "main", "index": 0 }]
+      ]
+    }
+  }
+}
